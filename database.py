@@ -13,3 +13,13 @@ def printTasks():
             print(f"Task: {i[1]}, Deadline: {i[2]}")
     cursor.close()
     con.close()
+
+
+def addTask(name, deadline):
+    con = sqlite3.connect('todo.db')
+    cursor = con.cursor()
+    userValues = (name, deadline)
+    cursor.execute("INSERT INTO task(name, deadline) VALUES(?, ?)", userValues)
+    con.commit()
+    cursor.close()
+    con.close()
