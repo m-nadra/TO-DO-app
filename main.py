@@ -20,7 +20,7 @@ while True:
             taskDeadline = input("Enter date (yyyy-MM-dd): ")
             db.addTask(taskName, taskDeadline)
         case 4:
-            pass
+            db.editTask()
         case 5:
             db.deleteTask()
         case 0:
